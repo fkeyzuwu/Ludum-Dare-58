@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 			push_error("WINO WINO PLAYER NOT COLLIDEER SPOTTED IN GARABEG TRUCK")
 	
 func reset_to_start_position() -> void:
-	set_deferred(&"global_position", spawn_pos)
+	global_position = spawn_pos
 
 func _on_timer_timeout() -> void:
 	reset_to_start_position()

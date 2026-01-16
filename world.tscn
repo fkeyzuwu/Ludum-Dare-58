@@ -27,6 +27,7 @@ tonemap_exposure = 1.26
 fog_enabled = true
 fog_light_color = Color(0.8064271, 0.43901905, 0.18362907, 1)
 fog_light_energy = 0.29
+fog_density = 0.0181
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aqk2v"]
 
