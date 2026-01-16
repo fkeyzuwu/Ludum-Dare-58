@@ -114,7 +114,6 @@ alignment = 1
 script = ExtResource("3_640wx")
 
 [node name="Crafter" parent="." instance=ExtResource("4_640wx")]
-visible = false
 layout_mode = 1
 offset_left = -264.5
 offset_top = -165.17

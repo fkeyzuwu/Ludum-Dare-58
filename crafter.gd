@@ -12,6 +12,7 @@ var inventory_items: Array[InventoryItem] = []
 var label_tween: Tween
 
 func _ready() -> void:
+	hide()
 	incorrect_recepie_label.modulate.a = 0.0
 	craft_button.disabled = true
 	

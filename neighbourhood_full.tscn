@@ -57,7 +57,7 @@ metadata/_custom_type_script = "uid://loqagcwsc03f"
 script = ExtResource("2_u382n")
 initial_dialogue = Array[String](["i have always had a fork.", "i have always had a spoon.", "what if.. what if there was something else? something.. magical?"])
 accept_dialogue = Array[String](["OMG!", "thanks for the sporky lil man! :)"])
-decline_dialogue = Array[String](["this isn't my desired kitchen utensil..", "..lil hoe"])
+decline_dialogue = Array[String](["this isn't my desired kitchen utensil..", "..lil rascal"])
 metadata/_custom_type_script = "uid://cqsko10jgjknc"
 
 [sub_resource type="Resource" id="Resource_7avjl"]
