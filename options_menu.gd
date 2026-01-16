@@ -42,6 +42,7 @@ func show_options() -> void:
 	lowpass_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	lowpass_tween.tween_property(lowpass, ^"cutoff_hz", 2000.0, 0.5)
 	show()
+	AudioManager.dialogue_open_sound_player.play()
 	get_tree().paused = true
 	
 func hide_options() -> void:
@@ -53,9 +54,18 @@ func hide_options() -> void:
 	lowpass_tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 	lowpass_tween.tween_property(lowpass, ^"cutoff_hz", 20500.0, 0.5)
 	get_tree().paused = false
+	AudioManager.dialogue_closed_sound_player.play()
 
 func _on_resume_pressed() -> void:
 	player.handle_options()
+	AudioManager.dialogue_continue_sound_player.play()
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+	AudioManager.dialogue_continue_sound_player.play()
+
+func _on_slider_drag_started() -> void:
+	AudioManager.dialogue_continue_sound_player.play()
+
+func _on_slider_drag_ended(value_changed: bool) -> void:
+	AudioManager.dialogue_continue_sound_player.play()

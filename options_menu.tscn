@@ -136,8 +136,14 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Quit"
 
+[connection signal="drag_ended" from="MarginContainer/OptionsMenu/MouseSensitivity/MouseSensitivitySlider" to="." method="_on_slider_drag_ended"]
+[connection signal="drag_started" from="MarginContainer/OptionsMenu/MouseSensitivity/MouseSensitivitySlider" to="." method="_on_slider_drag_started"]
 [connection signal="value_changed" from="MarginContainer/OptionsMenu/MouseSensitivity/MouseSensitivitySlider" to="." method="_on_mouse_sensitivity_slider_value_changed"]
+[connection signal="drag_ended" from="MarginContainer/OptionsMenu/MusicVolume/MusicVolumeSlider" to="." method="_on_slider_drag_ended"]
+[connection signal="drag_started" from="MarginContainer/OptionsMenu/MusicVolume/MusicVolumeSlider" to="." method="_on_slider_drag_started"]
 [connection signal="value_changed" from="MarginContainer/OptionsMenu/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="drag_ended" from="MarginContainer/OptionsMenu/SFXVolume/SFXVolumeSlider" to="." method="_on_slider_drag_ended"]
+[connection signal="drag_started" from="MarginContainer/OptionsMenu/SFXVolume/SFXVolumeSlider" to="." method="_on_slider_drag_started"]
 [connection signal="value_changed" from="MarginContainer/OptionsMenu/SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/OptionsMenu/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/OptionsMenu/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
