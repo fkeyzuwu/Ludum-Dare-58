@@ -30,6 +30,7 @@ enum State {
 
 var state := State.Idle
 var is_walking := false
+var spawned = false
 
 func _exit_current_state(new_state: State) -> void:
 	match state:
@@ -107,9 +108,12 @@ func move(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, stop_friction)
 	
 	if not is_walking and velocity.length() >= 0.1:
-		is_walking = true
-		AudioManager.footstep_player.play()
-		footstep_timer.start()
+		if spawned:
+			is_walking = true
+			AudioManager.footstep_player.play()
+			footstep_timer.start()
+		else:
+			spawned = true
 		
 	elif is_walking and velocity.length() <= 0.1:
 		is_walking = false
