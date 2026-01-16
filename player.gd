@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody3D
 
 const SPEED = 5.0
+@export_range(0.1, 5.0, 0.01) var stop_friction := 5.0
 const JUMP_VELOCITY = 3.5
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -89,8 +90,8 @@ func move(delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, stop_friction)
+		velocity.z = move_toward(velocity.z, 0, stop_friction)
 	
 	if not is_walking and velocity.length() >= 0.1:
 		is_walking = true
