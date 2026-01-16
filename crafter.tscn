@@ -138,6 +138,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_i86ai")
 [node name="CraftButton" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_640wx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_a2258")

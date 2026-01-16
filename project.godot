@@ -31,6 +31,10 @@ garbage_truck=""
 
 auto_rebuild=true
 
+[gui]
+
+theme/custom_font="uid://xgj7rkic4xas"
+
 [input]
 
 jump={
