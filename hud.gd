@@ -6,6 +6,7 @@ class_name HUD extends Control
 @export var crafter: Crafter
 @onready var thanks_for_playing_label: Label = $ThanksForPlayingLabel
 @onready var fade: ColorRect = $Fade
+@onready var options_menu: OptionsMenu = $OptionsMenu
 
 func _ready() -> void:
 	fade_in()
@@ -28,3 +29,9 @@ func hide_interaction_text() -> void:
 
 func show_thanks_for_playing_label() -> void:
 	thanks_for_playing_label.visible = true
+
+func show_options() -> void:
+	options_menu.show_options()
+
+func hide_options() -> void:
+	options_menu.hide_options()

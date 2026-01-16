@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 3.5
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@export_range(0.1, 5.0, 0.01) var mouse_sensitivity := 1.0
+@export_range(0.01, 1.0, 0.01) var mouse_sensitivity := 0.4
 
 @onready var camera: Camera3D = $Camera3D
 @export var interaction_raycast: RayCast3D
@@ -24,20 +24,24 @@ func _ready() -> void:
 enum State {
 	Idle,
 	Dialogue,
-	Crafting
+	Crafting,
+	Options
 }
 
 var state := State.Idle
 var is_walking := false
 
-func _exit_current_state() -> void:
+func _exit_current_state(new_state: State) -> void:
 	match state:
 		State.Crafting:
-			hud.crafter.return_crafting_slots()
-			hud.crafter.hide_crafter()
+			if new_state != State.Options:
+				hud.crafter.return_crafting_slots()
+				hud.crafter.hide_crafter()
+		State.Options:
+			hud.hide_options()
 
 func enter_state(_state: State) -> void:
-	_exit_current_state()
+	_exit_current_state(_state)
 	
 	match _state:
 		State.Idle:
@@ -48,6 +52,9 @@ func enter_state(_state: State) -> void:
 		State.Crafting:
 			hud.hide_interaction_text()
 			hud.crafter.show_crafter()
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		State.Options:
+			hud.show_options()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
 	state = _state
@@ -70,8 +77,14 @@ func _input(event: InputEvent) -> void:
 			enter_state(State.Idle)
 	elif event.is_action_pressed(&"change_mouse_mode"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_CAPTURED
-	elif event.is_action_pressed("quit") and Engine.is_editor_hint():
-		get_tree().quit()
+	elif event.is_action_pressed(&"options"):
+		if state == State.Options:
+			if hud.crafter.visible:
+				enter_state(State.Crafting)
+			else:
+				enter_state(State.Idle)
+		else:
+			enter_state(State.Options)
 
 func _physics_process(delta: float) -> void:
 	move(delta)

@@ -55,7 +55,6 @@ _data = {
 collision_mask = 178
 script = ExtResource("1_nw3w6")
 stop_friction = 1.34
-mouse_sensitivity = 0.89
 interaction_raycast = NodePath("Camera3D/InteractionRaycast")
 hud = NodePath("HUD")
 inventory = NodePath("Inventory")

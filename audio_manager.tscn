@@ -59,24 +59,30 @@ script = ExtResource("1_jisk1")
 [node name="GarbageSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_67dqc")
 volume_db = -8.822
+bus = &"SFX"
 
 [node name="CraftedItemSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_5olve")
 volume_db = -10.5
+bus = &"SFX"
 
 [node name="DialogueContinueSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_nhx87")
 max_polyphony = 4
+bus = &"SFX"
 
 [node name="DialogueOpenSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_l2k84")
 volume_db = -12.0
+bus = &"SFX"
 
 [node name="DialogueClosedSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_l55mp")
 volume_db = -12.0
+bus = &"SFX"
 
 [node name="FootstepPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_v0gdi")
 volume_db = -35.474
 max_polyphony = 4
+bus = &"SFX"

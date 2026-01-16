@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d30xmx8lo8vv8"]
+[gd_scene load_steps=7 format=3 uid="uid://d30xmx8lo8vv8"]
 
 [ext_resource type="Script" uid="uid://jqpsit2wgunv" path="res://hud.gd" id="1_37p78"]
 [ext_resource type="Script" uid="uid://f7iht74cxv8t" path="res://dialogue_box.gd" id="2_64ctp"]
 [ext_resource type="Script" uid="uid://cbj5hufv6373i" path="res://inventory_container.gd" id="3_640wx"]
 [ext_resource type="PackedScene" uid="uid://chpo7w8qryu17" path="res://crafter.tscn" id="4_640wx"]
+[ext_resource type="PackedScene" uid="uid://dha336cr5sb3o" path="res://options_menu.tscn" id="5_a2258"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq4i"]
 content_margin_left = 0.0
@@ -156,3 +157,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "Thanks for playing!"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("5_a2258")]
+layout_mode = 1
+offset_left = -253.0
+offset_top = -184.0
+offset_right = 249.0
+offset_bottom = 78.0

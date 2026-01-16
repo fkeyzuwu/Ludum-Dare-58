@@ -458,6 +458,7 @@ stream = ExtResource("2_tbp23")
 volume_db = -14.359
 unit_size = 6.13
 autoplay = true
+bus = &"SFX"
 attenuation_filter_db = -32.6
 doppler_tracking = 2
 
