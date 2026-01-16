@@ -9,9 +9,9 @@
 
 [sub_resource type="Resource" id="Resource_sxko6"]
 script = ExtResource("1_gwod7")
-initial_dialogue = Array[String](["mewo"])
-accept_dialogue = Array[String](["mewo mewo!! :3"])
-decline_dialogue = Array[String](["mewo :("])
+initial_dialogue = Array[String](["meow"])
+accept_dialogue = Array[String](["meow meow!! :3"])
+decline_dialogue = Array[String](["meow :("])
 metadata/_custom_type_script = "uid://cqsko10jgjknc"
 
 [resource]
