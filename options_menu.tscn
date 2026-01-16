@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dha336cr5sb3o"]
+[gd_scene load_steps=4 format=3 uid="uid://dha336cr5sb3o"]
 
 [ext_resource type="Script" uid="uid://bock4whsylwqr" path="res://options_menu.gd" id="1_lbr8e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbr8e"]
+bg_color = Color(0.07450981, 0.3372549, 0.29803923, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1lix"]
+bg_color = Color(0.13333334, 0.53333336, 0.4745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
 
 [node name="OptionsMenu" type="PanelContainer" node_paths=PackedStringArray("mouse_sensitivity_slider", "music_slider", "sfx_slider")]
 anchors_preset = 8
@@ -46,12 +64,15 @@ alignment = 1
 [node name="Label" type="Label" parent="MarginContainer/OptionsMenu/MouseSensitivity"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "mouse senisitivity:"
+text = "mouse sensitivity:"
 
 [node name="MouseSensitivitySlider" type="HSlider" parent="MarginContainer/OptionsMenu/MouseSensitivity"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_styles/slider = SubResource("StyleBoxFlat_lbr8e")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_t1lix")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_t1lix")
 max_value = 1.0
 step = 0.01
 
@@ -69,6 +90,9 @@ text = "music:"
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_styles/slider = SubResource("StyleBoxFlat_lbr8e")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_t1lix")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_t1lix")
 max_value = 1.0
 step = 0.01
 
@@ -86,9 +110,34 @@ text = "sfx:"
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_styles/slider = SubResource("StyleBoxFlat_lbr8e")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_t1lix")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_t1lix")
 max_value = 1.0
 step = 0.01
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/OptionsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Resume" type="Button" parent="MarginContainer/OptionsMenu/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Resume"
+
+[node name="Quit" type="Button" parent="MarginContainer/OptionsMenu/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Quit"
 
 [connection signal="value_changed" from="MarginContainer/OptionsMenu/MouseSensitivity/MouseSensitivitySlider" to="." method="_on_mouse_sensitivity_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/OptionsMenu/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/OptionsMenu/SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/OptionsMenu/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/OptionsMenu/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

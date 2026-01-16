@@ -23,6 +23,7 @@ func _ready() -> void:
 	
 func show_crafter() -> void:
 	show()
+	player.hud.hide_crafting_hint()
 	AudioManager.dialogue_open_sound_player.play()
 
 func hide_crafter() -> void:

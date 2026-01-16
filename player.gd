@@ -31,6 +31,7 @@ enum State {
 var state := State.Idle
 var is_walking := false
 var spawned = false
+var has_picked_up = false
 
 func _exit_current_state(new_state: State) -> void:
 	match state:
@@ -78,14 +79,15 @@ func _input(event: InputEvent) -> void:
 			enter_state(State.Idle)
 	elif event.is_action_pressed(&"change_mouse_mode"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_CAPTURED
-	elif event.is_action_pressed(&"options"):
-		if state == State.Options:
-			if hud.crafter.visible:
-				enter_state(State.Crafting)
-			else:
-				enter_state(State.Idle)
+
+func handle_options() -> void:
+	if state == State.Options:
+		if hud.crafter.visible:
+			enter_state(State.Crafting)
 		else:
-			enter_state(State.Options)
+			enter_state(State.Idle)
+	else:
+		enter_state(State.Options)
 
 func _physics_process(delta: float) -> void:
 	move(delta)
