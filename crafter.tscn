@@ -1,19 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://chpo7w8qryu17"]
+[gd_scene load_steps=9 format=3 uid="uid://chpo7w8qryu17"]
 
 [ext_resource type="Script" uid="uid://dmjal3883swwk" path="res://crafter.gd" id="1_5pxk1"]
-[ext_resource type="Texture2D" uid="uid://cedpr6oub5b8e" path="res://icons8-plus-24.png" id="2_dsfm1"]
+[ext_resource type="Texture2D" uid="uid://jrvpmq2wg800" path="res://fonts/plus.svg" id="2_dsfm1"]
 
-[sub_resource type="Gradient" id="Gradient_dsfm1"]
-offsets = PackedFloat32Array(0.026578072, 0.9302326, 1)
-colors = PackedColorArray(18.892157, 18.892157, 18.892157, 0, 0.70926285, 0.70926285, 0.70926285, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2q6md"]
-gradient = SubResource("Gradient_dsfm1")
-fill = 2
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i86ai"]
-texture = SubResource("GradientTexture2D_2q6md")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsfm1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.14406255, 0.14406255, 0.14406255, 0.6)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.19095773, 0.53624487, 0.47299796, 0.7294118)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_640wx"]
 content_margin_left = 4.0
@@ -110,7 +115,7 @@ item_slots = [NodePath("HBoxContainer/ItemSlot1"), NodePath("HBoxContainer/ItemS
 
 [node name="IncorrectComboLabel" type="Label" parent="."]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 22
 text = "hmm.. doesn't seem like i can make anything with this."
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -123,9 +128,17 @@ alignment = 1
 [node name="ItemSlot1" type="PanelContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_i86ai")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsfm1")
 
-[node name="Plus" type="TextureRect" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 23
+theme_override_constants/margin_top = 23
+theme_override_constants/margin_right = 23
+theme_override_constants/margin_bottom = 23
+
+[node name="Plus" type="TextureRect" parent="HBoxContainer/MarginContainer"]
+modulate = Color(3.5797245e-07, 0.16114119, 0.13457191, 1)
 layout_mode = 2
 texture = ExtResource("2_dsfm1")
 expand_mode = 2
@@ -133,7 +146,7 @@ expand_mode = 2
 [node name="ItemSlot2" type="PanelContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_i86ai")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsfm1")
 
 [node name="CraftButton" type="Button" parent="."]
 layout_mode = 2
