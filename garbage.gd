@@ -13,6 +13,7 @@ func interact(player: Player) -> void:
 	if player.inventory.items.size() < player.inventory.MAX_INVENTORY_SIZE:
 		player.inventory.add_item(item)
 		picked_up.emit(self)
+		AudioManager.play_garbage_pickup_sound()
 		if not player.has_picked_up:
 			player.has_picked_up = true
 			player.hud.show_crafting_hint()
