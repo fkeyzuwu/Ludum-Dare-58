@@ -54,12 +54,13 @@ _data = {
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("interaction_raycast", "hud", "inventory")]
 collision_mask = 178
 script = ExtResource("1_nw3w6")
-mouse_sensitivity = 1.27
+mouse_sensitivity = 0.89
 interaction_raycast = NodePath("Camera3D/InteractionRaycast")
 hud = NodePath("HUD")
 inventory = NodePath("Inventory")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_ryuan")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

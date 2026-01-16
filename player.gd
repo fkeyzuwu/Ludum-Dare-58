@@ -59,10 +59,9 @@ func _on_dialogue_box_closed() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and state == State.Idle:
-		var delta = get_process_delta_time()
-		global_rotation.y -= event.relative.x * delta * mouse_sensitivity
-		camera.global_rotation.x -= event.relative.y * delta * mouse_sensitivity
-		camera.global_rotation_degrees.x = clampf(camera.global_rotation_degrees.x, -85, 85)
+		global_rotation.y -= event.relative.x * mouse_sensitivity * 0.01
+		camera.global_rotation.x -= event.relative.y * mouse_sensitivity * 0.01
+		camera.global_rotation_degrees.x = clampf(camera.global_rotation_degrees.x, -80.0, 80.0)
 	elif event.is_action_pressed(&"craft"):
 		if state == State.Idle:
 			enter_state(State.Crafting)
