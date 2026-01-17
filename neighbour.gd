@@ -33,19 +33,22 @@ func hide_neighbour() -> void:
 	mesh_instance.visible = false
 
 func create_all_garbage():
+	var player: Player = get_tree().current_scene.find_child("Player")
+	
 	for garbage_item in data.throw_objects:
 		var item_scene: PackedScene = load(garbage_item.scene)
 		var garbage = item_scene.instantiate() as RigidBody3D
 		garbage_can.add_child(garbage)
+		garbage_queue.append(garbage)
+		garbage.freeze = true
+		garbage.global_position = player.global_position - player.camera.basis.z
+		await RenderingServer.frame_post_draw
+		garbage.visible = false
 		var pos = garbage_can.drop_point.global_position
 		pos.x += randf_range(-0.3, 0.3)
 		pos.z += randf_range(-0.3, 0.3)
 		garbage.global_position = pos
 		garbage.rotation_degrees.y = randf_range(0, 360)
-		garbage_queue.append(garbage)
-		garbage.freeze = true
-		await get_tree().process_frame
-		garbage.visible = false
 
 func throw_garbage() -> void:
 	await get_tree().create_timer(randf_range(5.0, 30.0)).timeout
