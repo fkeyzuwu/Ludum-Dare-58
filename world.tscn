@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://lsv5og7im76d"]
+[gd_scene load_steps=13 format=3 uid="uid://lsv5og7im76d"]
 
 [ext_resource type="PackedScene" uid="uid://cy3n0dshugl5p" path="res://player.tscn" id="1_l6kn1"]
+[ext_resource type="PackedScene" uid="uid://d1d4xeay1lhfk" path="res://world_shader_compilation.tscn" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://dwed38g7s810u" path="res://garbage_truck.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://ctft518135wdm" path="res://neighbourhood_full.tscn" id="5_dwbse"]
 
@@ -30,6 +31,33 @@ fog_density = 0.0181
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aqk2v"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dwbse"]
+sky_top_color = Color(0.6156863, 0.23921569, 0.019607844, 1)
+sky_horizon_color = Color(0.9932105, 0.5651081, 0.38152567, 1)
+sky_curve = 0.1218379
+ground_bottom_color = Color(0.03137255, 0.24705882, 0.15294118, 1)
+
+[sub_resource type="Sky" id="Sky_pkg7o"]
+sky_material = SubResource("ProceduralSkyMaterial_dwbse")
+
+[sub_resource type="Environment" id="Environment_gbfbk"]
+background_mode = 2
+background_energy_multiplier = 0.61
+sky = SubResource("Sky_pkg7o")
+ambient_light_source = 2
+ambient_light_color = Color(0.7917165, 0.4244633, 0.20200789, 1)
+ambient_light_sky_contribution = 0.41
+ambient_light_energy = 0.1
+tonemap_mode = 3
+tonemap_exposure = 1.26
+fog_enabled = true
+fog_light_color = Color(0.8064271, 0.43901905, 0.18362907, 1)
+fog_light_energy = 0.29
+fog_density = 0.0181
+
+[sub_resource type="World3D" id="World3D_ioo17"]
+environment = SubResource("Environment_gbfbk")
+
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -58,5 +86,11 @@ collision_layer = 256
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathBoundary"]
 shape = SubResource("WorldBoundaryShape3D_aqk2v")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+world_3d = SubResource("World3D_ioo17")
+size = Vector2i(507, 277)
+
+[node name="World" parent="SubViewport" instance=ExtResource("4_036b0")]
 
 [connection signal="body_entered" from="DeathBoundary" to="Player" method="_on_death_boundary_body_entered"]
