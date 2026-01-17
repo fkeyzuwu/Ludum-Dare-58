@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://lsv5og7im76d"]
+[gd_scene load_steps=8 format=3 uid="uid://lsv5og7im76d"]
 
 [ext_resource type="PackedScene" uid="uid://cy3n0dshugl5p" path="res://player.tscn" id="1_l6kn1"]
-[ext_resource type="AudioStream" uid="uid://bagp3cjkuajmt" path="res://audio/music/main_theme.wav" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://dwed38g7s810u" path="res://garbage_truck.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://ctft518135wdm" path="res://neighbourhood_full.tscn" id="5_dwbse"]
 
@@ -52,13 +51,6 @@ transform = Transform3D(0.010541557, 0, -0.99994445, 0, 1, 0, 0.99994445, 0, 0.0
 
 [node name="NeighbourhoodFull" parent="." instance=ExtResource("5_dwbse")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="MainTheme" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("4_036b0")
-volume_db = -18.543
-autoplay = true
-bus = &"Music"
 
 [node name="DeathBoundary" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -16.82075, 0)

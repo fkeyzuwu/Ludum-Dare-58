@@ -181,3 +181,36 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Press 'C' to craft"
+
+[node name="EndGameButtons" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.5
+offset_top = -131.0
+offset_right = 157.5
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="Replay" type="Button" parent="EndGameButtons"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Replay"
+
+[node name="Quit" type="Button" parent="EndGameButtons"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[connection signal="pressed" from="EndGameButtons/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="EndGameButtons/Quit" to="." method="_on_quit_pressed"]

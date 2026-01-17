@@ -32,6 +32,7 @@ var state := State.Idle
 var is_walking := false
 var spawned = false
 var has_picked_up = false
+var end_game := false
 
 func _exit_current_state(new_state: State) -> void:
 	match state:
@@ -68,6 +69,8 @@ func _on_dialogue_box_closed() -> void:
 	enter_state(State.Idle)
 
 func _input(event: InputEvent) -> void:
+	if end_game: return
+	
 	if event is InputEventMouseMotion and state == State.Idle:
 		global_rotation.y -= event.relative.x * mouse_sensitivity * 0.01
 		camera.global_rotation.x -= event.relative.y * mouse_sensitivity * 0.01
@@ -90,6 +93,7 @@ func handle_options() -> void:
 		enter_state(State.Options)
 
 func _physics_process(delta: float) -> void:
+	if end_game: return
 	move(delta)
 	try_interact()
 

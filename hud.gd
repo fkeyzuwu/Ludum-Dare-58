@@ -8,6 +8,7 @@ class_name HUD extends Control
 @onready var fade: ColorRect = $Fade
 @onready var options_menu: OptionsMenu = $OptionsMenu
 @onready var crafting_hint_label: Label = $CraftingHintLabel
+@onready var end_game_buttons: HBoxContainer = $EndGameButtons
 
 func _ready() -> void:
 	crafting_hint_label.modulate.a = 0.0
@@ -31,6 +32,9 @@ func hide_interaction_text() -> void:
 
 func show_thanks_for_playing_label() -> void:
 	thanks_for_playing_label.visible = true
+	end_game_buttons.visible = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	options_menu.player.end_game = true
 
 func show_options() -> void:
 	options_menu.show_options()
@@ -45,3 +49,9 @@ func show_crafting_hint() -> void:
 	
 func hide_crafting_hint() -> void:
 	crafting_hint_label.visible = false
+
+func _on_replay_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgx0wm4blsplr"]
+[gd_scene load_steps=20 format=3 uid="uid://cgx0wm4blsplr"]
 
 [ext_resource type="Script" uid="uid://bv0k3gouw1skn" path="res://audio_manager.gd" id="1_jisk1"]
 [ext_resource type="AudioStream" uid="uid://jtk0gnuonevt" path="res://audio/sfx/garbage_pickup/garbage_pickup1.wav" id="2_5olve"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bmgkl4nmvb7gp" path="res://audio/sfx/footsteps/footstep2.wav" id="10_astvc"]
 [ext_resource type="AudioStream" uid="uid://beqs2cw6lwku8" path="res://audio/sfx/footsteps/footstep3.wav" id="11_ma34g"]
 [ext_resource type="AudioStream" uid="uid://dvjdobgxhrje4" path="res://audio/sfx/footsteps/footstep4.wav" id="12_hokuy"]
+[ext_resource type="AudioStream" uid="uid://bagp3cjkuajmt" path="res://audio/music/main_theme.wav" id="13_k4pvn"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_67dqc"]
 random_pitch = 1.1
@@ -87,3 +88,10 @@ stream = SubResource("AudioStreamRandomizer_v0gdi")
 volume_db = -35.474
 max_polyphony = 4
 bus = &"SFX"
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("13_k4pvn")
+volume_db = -18.543
+autoplay = true
+bus = &"Music"
