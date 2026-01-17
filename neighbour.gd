@@ -9,6 +9,8 @@ var initial_interaction := false
 
 static var neighbours_to_finish: int = 0
 
+var garbage_queue: Array[RigidBody3D]
+
 func _ready() -> void:
 	mesh_instance.mesh = data.mesh_data.mesh.duplicate(true)
 	mesh_instance.position.x = data.mesh_data.offset
@@ -20,6 +22,8 @@ func _ready() -> void:
 		neighbours_to_finish += 1
 	
 	hide_neighbour()
+	await get_tree().process_frame
+	create_all_garbage()
 	throw_garbage()
 	
 func show_neighbour() -> void:
@@ -27,12 +31,10 @@ func show_neighbour() -> void:
 	
 func hide_neighbour() -> void:
 	mesh_instance.visible = false
-	
-func throw_garbage() -> void:
-	await get_tree().create_timer(randf_range(5.0, 30.0)).timeout
-	var garabge_item = data.throw_objects.pop_front() as Item
-	if garabge_item:
-		var item_scene: PackedScene = load(garabge_item.scene)
+
+func create_all_garbage():
+	for garbage_item in data.throw_objects:
+		var item_scene: PackedScene = load(garbage_item.scene)
 		var garbage = item_scene.instantiate() as RigidBody3D
 		garbage_can.add_child(garbage)
 		var pos = garbage_can.drop_point.global_position
@@ -40,6 +42,16 @@ func throw_garbage() -> void:
 		pos.z += randf_range(-0.3, 0.3)
 		garbage.global_position = pos
 		garbage.rotation_degrees.y = randf_range(0, 360)
+		garbage_queue.append(garbage)
+		garbage.freeze = true
+		garbage.visible = false
+
+func throw_garbage() -> void:
+	await get_tree().create_timer(randf_range(5.0, 30.0)).timeout
+	var garbage = garbage_queue.pop_front() as RigidBody3D
+	if garbage:
+		garbage.freeze = false
+		garbage.visible = true
 		for child in garbage.get_children():
 			if child is Garbage:
 				child.picked_up.connect(func(_garbage: Garbage): throw_garbage())
