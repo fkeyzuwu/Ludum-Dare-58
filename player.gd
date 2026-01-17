@@ -70,11 +70,8 @@ func _on_dialogue_box_closed() -> void:
 
 func _input(event: InputEvent) -> void:
 	if end_game: return
-	
-	if event is InputEventMouseMotion and state == State.Idle:
-		global_rotation.y -= event.relative.x * mouse_sensitivity * 0.01
-		camera.global_rotation.x -= event.relative.y * mouse_sensitivity * 0.01
-		camera.global_rotation_degrees.x = clampf(camera.global_rotation_degrees.x, -80.0, 80.0)
+	if not DisplayServer.is_touchscreen_available() and event is InputEventMouseMotion and state == State.Idle:
+		move_camera(event)
 	elif event.is_action_pressed(&"craft"):
 		if state == State.Idle:
 			enter_state(State.Crafting)
@@ -92,9 +89,20 @@ func handle_options() -> void:
 	else:
 		enter_state(State.Options)
 
+func move_camera(event: InputEventMouseMotion = null):
+	if not DisplayServer.is_touchscreen_available() and event:
+		global_rotation.y -= event.relative.x * mouse_sensitivity * 0.01
+		camera.global_rotation.x -= event.relative.y * mouse_sensitivity * 0.01
+		camera.global_rotation_degrees.x = clampf(camera.global_rotation_degrees.x, -80.0, 80.0)
+	else:
+		global_rotation.y -= hud.camera_joystick.output.x * mouse_sensitivity * 0.1
+		camera.global_rotation.x -= hud.camera_joystick.output.y * mouse_sensitivity * 0.1
+		camera.global_rotation_degrees.x = clampf(camera.global_rotation_degrees.x, -80.0, 80.0)
+
 func _physics_process(delta: float) -> void:
 	if end_game: return
 	move(delta)
+	move_camera()
 	try_interact()
 
 func move(delta: float) -> void:

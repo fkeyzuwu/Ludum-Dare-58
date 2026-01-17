@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://coxvgpojdki7x"
 path.s3tc="res://.godot/imported/set1_metallicRoughness.png-ebd7a36063c3592df46a50c2abcac34b.s3tc.ctex"
+path.etc2="res://.godot/imported/set1_metallicRoughness.png-ebd7a36063c3592df46a50c2abcac34b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/coffee_paper_bag/textures/set1_metallicRoughness.png"
-dest_files=["res://.godot/imported/set1_metallicRoughness.png-ebd7a36063c3592df46a50c2abcac34b.s3tc.ctex"]
+dest_files=["res://.godot/imported/set1_metallicRoughness.png-ebd7a36063c3592df46a50c2abcac34b.s3tc.ctex", "res://.godot/imported/set1_metallicRoughness.png-ebd7a36063c3592df46a50c2abcac34b.etc2.ctex"]
 
 [params]
 

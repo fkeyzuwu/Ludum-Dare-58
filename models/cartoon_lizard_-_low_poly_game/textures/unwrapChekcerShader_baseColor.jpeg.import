@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv4q2kuakobis"
 path.s3tc="res://.godot/imported/unwrapChekcerShader_baseColor.jpeg-1c0602b66ab6490b1721b8517ced7d2f.s3tc.ctex"
+path.etc2="res://.godot/imported/unwrapChekcerShader_baseColor.jpeg-1c0602b66ab6490b1721b8517ced7d2f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/cartoon_lizard_-_low_poly_game/textures/unwrapChekcerShader_baseColor.jpeg"
-dest_files=["res://.godot/imported/unwrapChekcerShader_baseColor.jpeg-1c0602b66ab6490b1721b8517ced7d2f.s3tc.ctex"]
+dest_files=["res://.godot/imported/unwrapChekcerShader_baseColor.jpeg-1c0602b66ab6490b1721b8517ced7d2f.s3tc.ctex", "res://.godot/imported/unwrapChekcerShader_baseColor.jpeg-1c0602b66ab6490b1721b8517ced7d2f.etc2.ctex"]
 
 [params]
 

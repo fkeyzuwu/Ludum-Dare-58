@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2xtpfxxlxt8v"
 path.s3tc="res://.godot/imported/set1_baseColor.png-8b8c99075c4248335676e78a48500d53.s3tc.ctex"
+path.etc2="res://.godot/imported/set1_baseColor.png-8b8c99075c4248335676e78a48500d53.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/coffee_paper_bag/textures/set1_baseColor.png"
-dest_files=["res://.godot/imported/set1_baseColor.png-8b8c99075c4248335676e78a48500d53.s3tc.ctex"]
+dest_files=["res://.godot/imported/set1_baseColor.png-8b8c99075c4248335676e78a48500d53.s3tc.ctex", "res://.godot/imported/set1_baseColor.png-8b8c99075c4248335676e78a48500d53.etc2.ctex"]
 
 [params]
 

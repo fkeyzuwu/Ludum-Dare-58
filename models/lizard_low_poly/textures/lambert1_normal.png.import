@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjggpyjc80edj"
 path.s3tc="res://.godot/imported/lambert1_normal.png-573ba9a909ab0cfdcdb405d779d68b8b.s3tc.ctex"
+path.etc2="res://.godot/imported/lambert1_normal.png-573ba9a909ab0cfdcdb405d779d68b8b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/lizard_low_poly/textures/lambert1_normal.png"
-dest_files=["res://.godot/imported/lambert1_normal.png-573ba9a909ab0cfdcdb405d779d68b8b.s3tc.ctex"]
+dest_files=["res://.godot/imported/lambert1_normal.png-573ba9a909ab0cfdcdb405d779d68b8b.s3tc.ctex", "res://.godot/imported/lambert1_normal.png-573ba9a909ab0cfdcdb405d779d68b8b.etc2.ctex"]
 
 [params]
 

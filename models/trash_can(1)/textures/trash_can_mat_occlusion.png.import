@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bweu8w8mnktpp"
 path.s3tc="res://.godot/imported/trash_can_mat_occlusion.png-c911989538d215429c12f8d9c41cfa75.s3tc.ctex"
+path.etc2="res://.godot/imported/trash_can_mat_occlusion.png-c911989538d215429c12f8d9c41cfa75.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/trash_can(1)/textures/trash_can_mat_occlusion.png"
-dest_files=["res://.godot/imported/trash_can_mat_occlusion.png-c911989538d215429c12f8d9c41cfa75.s3tc.ctex"]
+dest_files=["res://.godot/imported/trash_can_mat_occlusion.png-c911989538d215429c12f8d9c41cfa75.s3tc.ctex", "res://.godot/imported/trash_can_mat_occlusion.png-c911989538d215429c12f8d9c41cfa75.etc2.ctex"]
 
 [params]
 

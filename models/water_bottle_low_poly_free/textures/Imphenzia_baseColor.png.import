@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://djm882v1ywyg2"
 path.s3tc="res://.godot/imported/Imphenzia_baseColor.png-5401db94a269696fc54c56b7515c93f2.s3tc.ctex"
+path.etc2="res://.godot/imported/Imphenzia_baseColor.png-5401db94a269696fc54c56b7515c93f2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/water_bottle_low_poly_free/textures/Imphenzia_baseColor.png"
-dest_files=["res://.godot/imported/Imphenzia_baseColor.png-5401db94a269696fc54c56b7515c93f2.s3tc.ctex"]
+dest_files=["res://.godot/imported/Imphenzia_baseColor.png-5401db94a269696fc54c56b7515c93f2.s3tc.ctex", "res://.godot/imported/Imphenzia_baseColor.png-5401db94a269696fc54c56b7515c93f2.etc2.ctex"]
 
 [params]
 

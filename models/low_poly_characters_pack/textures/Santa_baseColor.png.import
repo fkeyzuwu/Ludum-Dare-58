@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb1foyy1hxifr"
 path.s3tc="res://.godot/imported/Santa_baseColor.png-bf6fd7c8942330f9fada15bab10e04a3.s3tc.ctex"
+path.etc2="res://.godot/imported/Santa_baseColor.png-bf6fd7c8942330f9fada15bab10e04a3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/low_poly_characters_pack/textures/Santa_baseColor.png"
-dest_files=["res://.godot/imported/Santa_baseColor.png-bf6fd7c8942330f9fada15bab10e04a3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Santa_baseColor.png-bf6fd7c8942330f9fada15bab10e04a3.s3tc.ctex", "res://.godot/imported/Santa_baseColor.png-bf6fd7c8942330f9fada15bab10e04a3.etc2.ctex"]
 
 [params]
 

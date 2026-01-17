@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://daim77sfd2r7"
 path.s3tc="res://.godot/imported/Imphenzia_metallicRoughness.png-c09e3917c5c73a443d64366be2b91786.s3tc.ctex"
+path.etc2="res://.godot/imported/Imphenzia_metallicRoughness.png-c09e3917c5c73a443d64366be2b91786.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/water_bottle_low_poly_free/textures/Imphenzia_metallicRoughness.png"
-dest_files=["res://.godot/imported/Imphenzia_metallicRoughness.png-c09e3917c5c73a443d64366be2b91786.s3tc.ctex"]
+dest_files=["res://.godot/imported/Imphenzia_metallicRoughness.png-c09e3917c5c73a443d64366be2b91786.s3tc.ctex", "res://.godot/imported/Imphenzia_metallicRoughness.png-c09e3917c5c73a443d64366be2b91786.etc2.ctex"]
 
 [params]
 

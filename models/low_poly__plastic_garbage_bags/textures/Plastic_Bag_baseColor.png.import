@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0aoftieyqsu8"
 path.s3tc="res://.godot/imported/Plastic_Bag_baseColor.png-8267c68b7c485b56d6b68eadb59b46a3.s3tc.ctex"
+path.etc2="res://.godot/imported/Plastic_Bag_baseColor.png-8267c68b7c485b56d6b68eadb59b46a3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/low_poly__plastic_garbage_bags/textures/Plastic_Bag_baseColor.png"
-dest_files=["res://.godot/imported/Plastic_Bag_baseColor.png-8267c68b7c485b56d6b68eadb59b46a3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Plastic_Bag_baseColor.png-8267c68b7c485b56d6b68eadb59b46a3.s3tc.ctex", "res://.godot/imported/Plastic_Bag_baseColor.png-8267c68b7c485b56d6b68eadb59b46a3.etc2.ctex"]
 
 [params]
 

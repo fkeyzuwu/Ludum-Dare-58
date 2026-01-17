@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://de18fatqikdxe"
 path.s3tc="res://.godot/imported/Plastic_Bag_Dirt_metallicRoughness.png-d3325cf42abd741c68e3d57614809124.s3tc.ctex"
+path.etc2="res://.godot/imported/Plastic_Bag_Dirt_metallicRoughness.png-d3325cf42abd741c68e3d57614809124.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/low_poly__plastic_garbage_bags/textures/Plastic_Bag_Dirt_metallicRoughness.png"
-dest_files=["res://.godot/imported/Plastic_Bag_Dirt_metallicRoughness.png-d3325cf42abd741c68e3d57614809124.s3tc.ctex"]
+dest_files=["res://.godot/imported/Plastic_Bag_Dirt_metallicRoughness.png-d3325cf42abd741c68e3d57614809124.s3tc.ctex", "res://.godot/imported/Plastic_Bag_Dirt_metallicRoughness.png-d3325cf42abd741c68e3d57614809124.etc2.ctex"]
 
 [params]
 

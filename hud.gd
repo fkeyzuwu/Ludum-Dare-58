@@ -9,6 +9,8 @@ class_name HUD extends Control
 @onready var options_menu: OptionsMenu = $OptionsMenu
 @onready var crafting_hint_label: Label = $CraftingHintLabel
 @onready var end_game_buttons: HBoxContainer = $EndGameButtons
+@onready var camera_joystick: VirtualJoystick = $CameraJoystick
+@onready var move_joystick: VirtualJoystick = $MoveJoystick
 
 func _ready() -> void:
 	crafting_hint_label.modulate.a = 0.0

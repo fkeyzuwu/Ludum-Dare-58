@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg5l7345ep15o"
 path.s3tc="res://.godot/imported/basket_baseColor.jpeg-cf1222f1994575f0dc79876695bd54ff.s3tc.ctex"
+path.etc2="res://.godot/imported/basket_baseColor.jpeg-cf1222f1994575f0dc79876695bd54ff.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/shopping_basket/textures/basket_baseColor.jpeg"
-dest_files=["res://.godot/imported/basket_baseColor.jpeg-cf1222f1994575f0dc79876695bd54ff.s3tc.ctex"]
+dest_files=["res://.godot/imported/basket_baseColor.jpeg-cf1222f1994575f0dc79876695bd54ff.s3tc.ctex", "res://.godot/imported/basket_baseColor.jpeg-cf1222f1994575f0dc79876695bd54ff.etc2.ctex"]
 
 [params]
 

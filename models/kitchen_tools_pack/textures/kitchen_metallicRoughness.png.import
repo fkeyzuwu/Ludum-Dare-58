@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddhljlrpbcgf8"
 path.s3tc="res://.godot/imported/kitchen_metallicRoughness.png-66e77eca0b69a528dfc5467f0b04eea5.s3tc.ctex"
+path.etc2="res://.godot/imported/kitchen_metallicRoughness.png-66e77eca0b69a528dfc5467f0b04eea5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/kitchen_tools_pack/textures/kitchen_metallicRoughness.png"
-dest_files=["res://.godot/imported/kitchen_metallicRoughness.png-66e77eca0b69a528dfc5467f0b04eea5.s3tc.ctex"]
+dest_files=["res://.godot/imported/kitchen_metallicRoughness.png-66e77eca0b69a528dfc5467f0b04eea5.s3tc.ctex", "res://.godot/imported/kitchen_metallicRoughness.png-66e77eca0b69a528dfc5467f0b04eea5.etc2.ctex"]
 
 [params]
 

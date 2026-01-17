@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://grd4owg3yl04"
 path.s3tc="res://.godot/imported/metal_baseColor.jpeg-3f3c06265e4521eb7cd822d839eeef65.s3tc.ctex"
+path.etc2="res://.godot/imported/metal_baseColor.jpeg-3f3c06265e4521eb7cd822d839eeef65.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/saw_40/textures/metal_baseColor.jpeg"
-dest_files=["res://.godot/imported/metal_baseColor.jpeg-3f3c06265e4521eb7cd822d839eeef65.s3tc.ctex"]
+dest_files=["res://.godot/imported/metal_baseColor.jpeg-3f3c06265e4521eb7cd822d839eeef65.s3tc.ctex", "res://.godot/imported/metal_baseColor.jpeg-3f3c06265e4521eb7cd822d839eeef65.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5dugbp3pe8f4"
 path.s3tc="res://.godot/imported/Girl_baseColor.png-37fb231b19ec0ad0469bb177e006e677.s3tc.ctex"
+path.etc2="res://.godot/imported/Girl_baseColor.png-37fb231b19ec0ad0469bb177e006e677.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/low_poly_characters_pack/textures/Girl_baseColor.png"
-dest_files=["res://.godot/imported/Girl_baseColor.png-37fb231b19ec0ad0469bb177e006e677.s3tc.ctex"]
+dest_files=["res://.godot/imported/Girl_baseColor.png-37fb231b19ec0ad0469bb177e006e677.s3tc.ctex", "res://.godot/imported/Girl_baseColor.png-37fb231b19ec0ad0469bb177e006e677.etc2.ctex"]
 
 [params]
 
