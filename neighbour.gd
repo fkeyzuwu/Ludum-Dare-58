@@ -41,7 +41,7 @@ func create_all_garbage():
 		garbage_can.add_child(garbage)
 		garbage_queue.append(garbage)
 		garbage.freeze = true
-		garbage.global_position = player.global_position - player.camera.basis.z
+		garbage.global_position = player.global_position - player.camera.basis.z * 3.0
 		await RenderingServer.frame_post_draw
 		garbage.visible = false
 		var pos = garbage_can.drop_point.global_position
