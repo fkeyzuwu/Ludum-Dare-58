@@ -44,6 +44,7 @@ func create_all_garbage():
 		garbage.rotation_degrees.y = randf_range(0, 360)
 		garbage_queue.append(garbage)
 		garbage.freeze = true
+		await get_tree().process_frame
 		garbage.visible = false
 
 func throw_garbage() -> void:
