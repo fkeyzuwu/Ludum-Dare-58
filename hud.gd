@@ -35,6 +35,7 @@ func show_thanks_for_playing_label() -> void:
 	end_game_buttons.visible = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	options_menu.player.end_game = true
+	options_menu.player.footstep_timer.stop()
 
 func show_options() -> void:
 	options_menu.show_options()
