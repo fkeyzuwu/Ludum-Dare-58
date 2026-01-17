@@ -2,6 +2,7 @@ class_name Garbage extends Area3D
 
 @export var item: Item
 signal picked_up(garbage: Garbage)
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
 func get_interaction_text() -> String:
 	return "Press 'E' to pickup " + item.item_name
@@ -20,3 +21,9 @@ func interact(player: Player) -> void:
 		get_parent().queue_free()
 	else:
 		player.hud.dialogue_box.show_dialogue_box("tumi", ["i can't carry this many items... im smol boi ;-;"])
+
+func disable() -> void:
+	collision_shape.disabled = true
+	
+func enable() -> void:
+	collision_shape.disabled = false

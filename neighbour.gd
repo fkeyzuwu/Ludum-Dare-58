@@ -43,6 +43,9 @@ func create_all_garbage():
 		garbage.freeze = true
 		garbage.global_position = player.global_position - player.camera.basis.z * 3.0
 		await RenderingServer.frame_post_draw
+		for child in garbage.get_children():
+			if child is Garbage:
+				child.disable()
 		garbage.visible = false
 		var pos = garbage_can.drop_point.global_position
 		pos.x += randf_range(-0.3, 0.3)
@@ -58,6 +61,7 @@ func throw_garbage() -> void:
 		garbage.visible = true
 		for child in garbage.get_children():
 			if child is Garbage:
+				child.enable()
 				child.picked_up.connect(func(_garbage: Garbage): throw_garbage())
 				break
 

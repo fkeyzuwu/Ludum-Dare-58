@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d30xmx8lo8vv8"]
+[gd_scene load_steps=12 format=3 uid="uid://d30xmx8lo8vv8"]
 
 [ext_resource type="Script" uid="uid://jqpsit2wgunv" path="res://hud.gd" id="1_37p78"]
 [ext_resource type="Script" uid="uid://f7iht74cxv8t" path="res://dialogue_box.gd" id="2_64ctp"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://chpo7w8qryu17" path="res://crafter.tscn" id="4_640wx"]
 [ext_resource type="PackedScene" uid="uid://dha336cr5sb3o" path="res://options_menu.tscn" id="5_a2258"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="6_1xsix"]
+[ext_resource type="Texture2D" uid="uid://blb326c84xljm" path="res://mobile-controls/Vector/Icons/icon_cog.svg" id="7_rftc2"]
+[ext_resource type="Texture2D" uid="uid://corj8scfegxx" path="res://mobile-controls/Vector/Icons/icon_wrench.svg" id="8_61f8s"]
+[ext_resource type="Texture2D" uid="uid://d346sws8vpeb8" path="res://mobile-controls/Vector/Icons/icon_jump.svg" id="9_g10ll"]
+[ext_resource type="Texture2D" uid="uid://bqmfv8ix480ir" path="res://mobile-controls/Vector/Icons/icon_hand.svg" id="10_gpiub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq4i"]
 content_margin_left = 0.0
@@ -240,5 +244,82 @@ action_right = "right"
 action_up = "forward"
 action_down = "back"
 
+[node name="TouchButtons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsTouchButton" type="Button" parent="TouchButtons"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_top = 16.0
+offset_right = -18.0
+offset_bottom = 72.0
+grow_horizontal = 0
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("7_rftc2")
+
+[node name="CraftTouchButton" type="Button" parent="TouchButtons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -72.0
+offset_right = -216.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("8_61f8s")
+
+[node name="JumpTouchButton" type="Button" parent="TouchButtons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -71.0
+offset_right = -36.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("9_g10ll")
+
+[node name="InteractTouchButton" type="Button" parent="TouchButtons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -73.0
+offset_right = -128.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+action_mode = 0
+icon = ExtResource("10_gpiub")
+
 [connection signal="pressed" from="EndGameButtons/Replay" to="." method="_on_replay_pressed"]
 [connection signal="pressed" from="EndGameButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="TouchButtons/SettingsTouchButton" to="." method="_on_settings_touch_button_pressed"]
+[connection signal="pressed" from="TouchButtons/CraftTouchButton" to="." method="_on_craft_touch_button_pressed"]
+[connection signal="pressed" from="TouchButtons/JumpTouchButton" to="." method="_on_jump_touch_button_pressed"]
+[connection signal="pressed" from="TouchButtons/InteractTouchButton" to="." method="_on_interact_touch_button_pressed"]

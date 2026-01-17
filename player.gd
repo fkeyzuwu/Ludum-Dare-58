@@ -33,6 +33,7 @@ var is_walking := false
 var spawned = false
 var has_picked_up = false
 var end_game := false
+var jump_buffered := false
 
 func _exit_current_state(new_state: State) -> void:
 	match state:
@@ -73,10 +74,7 @@ func _input(event: InputEvent) -> void:
 	if not DisplayServer.is_touchscreen_available() and event is InputEventMouseMotion and state == State.Idle:
 		move_camera(event)
 	elif event.is_action_pressed(&"craft"):
-		if state == State.Idle:
-			enter_state(State.Crafting)
-		elif state == State.Crafting:
-			enter_state(State.Idle)
+		handle_crafting()
 	elif event.is_action_pressed(&"change_mouse_mode"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_CAPTURED
 
@@ -88,6 +86,12 @@ func handle_options() -> void:
 			enter_state(State.Idle)
 	else:
 		enter_state(State.Options)
+
+func handle_crafting() -> void:
+	if state == State.Idle:
+		enter_state(State.Crafting)
+	elif state == State.Crafting:
+		enter_state(State.Idle)
 
 func move_camera(event: InputEventMouseMotion = null):
 	if not DisplayServer.is_touchscreen_available() and event:
@@ -109,8 +113,7 @@ func move(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor() and state == State.Idle:
-		velocity.y = JUMP_VELOCITY
+	handle_jump()
 
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -135,7 +138,15 @@ func move(delta: float) -> void:
 	
 	move_and_slide()
 
-func try_interact() -> void:
+func handle_jump() -> void:
+	if (Input.is_action_just_pressed("jump") and can_jump()) or jump_buffered:
+		velocity.y = JUMP_VELOCITY
+		jump_buffered = false
+
+func can_jump() -> bool:
+	return is_on_floor() and state == State.Idle
+
+func try_interact(mobile := false) -> void:
 	match state:
 		State.Idle:
 			if interaction_raycast.is_colliding():
@@ -144,7 +155,7 @@ func try_interact() -> void:
 					hud.hide_interaction_text()
 				else:
 					if interactable.can_interact():
-						if Input.is_action_just_pressed(&"interact"):
+						if Input.is_action_just_pressed(&"interact") or mobile:
 							await interactable.interact(self)
 						else:
 							hud.show_interaction_text(interactable.get_interaction_text())
@@ -153,7 +164,7 @@ func try_interact() -> void:
 			else:
 				hud.hide_interaction_text()
 		State.Dialogue:
-			if Input.is_action_just_pressed(&"interact") or Input.is_action_just_pressed(&"mouse_left"):
+			if Input.is_action_just_pressed(&"interact") or Input.is_action_just_pressed(&"mouse_left") or mobile:
 				hud.dialogue_box.continue_dialogue()
 
 func kill() -> void:
