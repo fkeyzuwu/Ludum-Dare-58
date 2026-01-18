@@ -44,6 +44,9 @@ func create_all_garbage():
 		garbage.global_position = player.global_position - player.camera.basis.z * 3.0
 		await RenderingServer.frame_post_draw
 		garbage.visible = false
+		for child in garbage.get_children():
+			if child is Garbage:
+				child.collision_shape.disabled = true
 		var pos = garbage_can.drop_point.global_position
 		pos.x += randf_range(-0.3, 0.3)
 		pos.z += randf_range(-0.3, 0.3)
@@ -59,7 +62,7 @@ func throw_garbage() -> void:
 		for child in garbage.get_children():
 			if child is Garbage:
 				child.picked_up.connect(func(_garbage: Garbage): throw_garbage())
-				break
+				child.collision_shape.disabled = false
 
 func get_interaction_text() -> String:
 	return "Press 'E' to talk to " + data.neighbour_name

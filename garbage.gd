@@ -2,6 +2,7 @@ class_name Garbage extends Area3D
 
 @export var item: Item
 signal picked_up(garbage: Garbage)
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
 func get_interaction_text() -> String:
 	return "Press 'E' to pickup " + item.item_name
