@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dl71ly4sgctmv"
-path="res://.godot/imported/fork.png-c9ca17a7978750f5e734c633780f4367.ctex"
+path="res://.godot/imported/Fork.png-2ef25ff18f6b42da3624c399e22f6dd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screenshots/fork.png"
-dest_files=["res://.godot/imported/fork.png-c9ca17a7978750f5e734c633780f4367.ctex"]
+source_file="res://screenshots/Fork.png"
+dest_files=["res://.godot/imported/Fork.png-2ef25ff18f6b42da3624c399e22f6dd7.ctex"]
 
 [params]
 

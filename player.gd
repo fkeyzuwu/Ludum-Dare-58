@@ -164,7 +164,9 @@ func try_interact(mobile := false) -> void:
 			else:
 				hud.hide_interaction_text()
 		State.Dialogue:
-			if Input.is_action_just_pressed(&"interact") or Input.is_action_just_pressed(&"mouse_left") or mobile:
+			if  Input.is_action_just_pressed(&"interact") or \
+				(Input.is_action_just_pressed(&"mouse_left") and !DisplayServer.is_touchscreen_available() or\
+				mobile):
 				hud.dialogue_box.continue_dialogue()
 
 func kill() -> void:
